@@ -9,22 +9,18 @@ shipkit {
 }
 
 allprojects {
-   plugins.withId("com.jfrog.bintray") {
-
-       //Bintray configuration is handled by JFrog Bintray Gradle Plugin
-       //For reference see the official documentation: https://github.com/bintray/gradle-bintray-plugin
+   plugins.withId("com.shipkit.bintray") {
        bintray {
-
            //TODO sign up for free open source account with https://bintray.com, then look up your API key on your profile page in Bintray
            key = System.getenv("BINTRAY_API_KEY")
 
            pkg {
-               repo = 'dynamometer'
+               repo = 'maven'
                user = System.getenv("BINTRAY_USER")
                userOrg = 'linkedin'
                name = 'dynamometer'
                licenses = ['BSD 2-Clause']
-               labels = ['continuous delivery', 'release automation', 'shipkit']
+               labels = ['hadoop', 'benchmarking']
            }
        }
    }
